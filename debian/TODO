@@ -1,0 +1,2 @@
+* automate the creation of the rougify manpage
+  use help2man in the override_dh_installman target of debian/rules

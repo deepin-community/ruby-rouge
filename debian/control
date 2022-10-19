@@ -1,0 +1,32 @@
+Source: ruby-rouge
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Youhei SASAKI <uwabami@gfd-dennou.org>,
+           Daniel Leidert <dleidert@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb (>= 1),
+               ruby-bundler,
+               ruby-minitest-power-assert,
+               ruby-sinatra
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-rouge.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-rouge
+Homepage: http://rouge.jneen.net/
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-rouge
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Breaks: asciidoctor (<< 2.0.12-3~),
+        jekyll (<< 3.9.0+dfsg-2~),
+        ruby-kramdown (<< 2.3.1-1~)
+Description: pure-Ruby syntax highlighter compatible with pygments
+ Rouge is a pure-Ruby syntax highlighter. It can highlight over 60
+ languages, and output HTML or ANSI 256-color text. Its HTML output is
+ compatible with stylesheets designed for pygments.

@@ -1,0 +1,25 @@
+From: Cédric Boutillier <boutil@debian.org>
+Date: Mon, 20 Jul 2015 07:13:23 +0200
+Subject: Fix PATH: rougify
+
+Forwarded: not-needed
+---
+ bin/rougify | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/bin/rougify b/bin/rougify
+index 13f2b10..eaf68eb 100755
+--- a/bin/rougify
++++ b/bin/rougify
+@@ -2,9 +2,8 @@
+ # frozen_string_literal: true
+ 
+ require 'pathname'
+-ROOT_DIR = Pathname.new(__FILE__).dirname.parent
+-Kernel::load ROOT_DIR.join('lib/rouge.rb')
+-Kernel::load ROOT_DIR.join('lib/rouge/cli.rb')
++require 'rouge'
++require 'rouge/cli'
+ Signal.trap('PIPE', 'SYSTEM_DEFAULT') if Signal.list.include? 'PIPE'
+ 
+ begin

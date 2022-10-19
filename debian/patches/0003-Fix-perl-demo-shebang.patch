@@ -1,0 +1,21 @@
+From: Lucas Kanashiro <kanashiro@debian.org>
+Date: Thu, 18 Jul 2019 16:52:37 +0200
+Subject: Fix perl demo shebang policy violation
+
+Forwarded: not-needed
+
+Last-Updated: 2019-01-04
+---
+ lib/rouge/demos/perl | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/rouge/demos/perl b/lib/rouge/demos/perl
+index a966445..7fae300 100644
+--- a/lib/rouge/demos/perl
++++ b/lib/rouge/demos/perl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ use warnings;
+ print "a: ";
+ my $a = "foo";

@@ -1,0 +1,27 @@
+From: =?utf-8?q?C=C3=A9dric_Boutillier?= <boutil@debian.org>
+Date: Mon, 20 Jul 2015 07:47:03 +0200
+Subject: Fix demo's location
+
+Update: The tests require us to rely on lib/rouge because /usr/share/ruby-rouge
+does not exist during build. It will in autopkgtest!
+---
+ lib/rouge/lexer.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/lib/rouge/lexer.rb b/lib/rouge/lexer.rb
+index d2f0888..a6ff74d 100644
+--- a/lib/rouge/lexer.rb
++++ b/lib/rouge/lexer.rb
+@@ -127,7 +127,11 @@ module Rouge
+       def demo_file(arg=:absent)
+         return @demo_file = Pathname.new(arg) unless arg == :absent
+ 
+-        @demo_file = Pathname.new(File.join(__dir__, 'demos', tag))
++	if Dir.exists?(File.join(__dir__, 'demos'))
++	  @demo_file = Pathname.new(File.join(__dir__, 'demos', tag))
++	else
++	  @demo_file = Pathname.new(File.join('/usr/share/ruby-rouge', 'demos', tag))
++	end
+       end
+ 
+       # Specify or get a small demo string for this lexer

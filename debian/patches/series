@@ -1,0 +1,6 @@
+0001_Fix_PATH_rougify.patch
+0002_Fix_location_of_demo.path
+0003-Fix-perl-demo-shebang.patch
+0004-Disable-all-non-essential-gems.patch
+0005-Fix-gemspec-requiring-lib.patch
+0006-Fix-tests-and-disable-bundler.patch

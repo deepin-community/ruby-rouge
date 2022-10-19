@@ -1,0 +1,23 @@
+From: Daniel Leidert <daniel.leidert@wgdd.de>
+Date: Fri, 3 Apr 2020 03:41:28 +0200
+Subject: Fix gemspec requiring lib
+
+Forwarded: not-needed
+---
+ rouge.gemspec | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/rouge.gemspec b/rouge.gemspec
+index c036876..899b96b 100644
+--- a/rouge.gemspec
++++ b/rouge.gemspec
+@@ -1,6 +1,7 @@
+ # frozen_string_literal: true
+-
+-require './lib/rouge/version'
++lib = File.expand_path("../lib", __FILE__)
++$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
++require "rouge/version"
+ 
+ Gem::Specification.new do |s|
+   s.name = "rouge"

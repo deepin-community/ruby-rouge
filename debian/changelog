@@ -1,0 +1,250 @@
+ruby-rouge (3.26.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control (Standards-Version): Bump to 4.6.0 without further changes.
+  * d/copyright (Copyright): Update.
+
+ -- Daniel Leidert <dleidert@debian.org>  Wed, 22 Sep 2021 22:04:47 +0200
+
+ruby-rouge (3.26.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * d/control: Add Breaks against versions of jekyll, ruby-kramdown, and
+    asciidoctor affected by the rewrite of the PHP lexer (closes: #971841).
+    (Standards-Version): Bump to 4.5.1 without further changes.
+  * d/copyright (Copyright): Fix author's name and update team's copyright.
+  * d/rules: Enable gem installation layout.
+    (override_dh_auto_install): Fix path to demos.
+  * d/TODO: Remove item related to enabling tests (done in 3.17.0-1).
+  * d/patches/*.patch: Update patches.
+  * d/patches/0006-Fix-tests-and-disable-bundler.patch: Add patch.
+    - Drop bundler usage to fix tests.
+  * d/patches/series: Enable new patch.
+
+ -- Daniel Leidert <dleidert@debian.org>  Fri, 10 Sep 2021 01:25:34 +0200
+
+ruby-rouge (3.21.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+
+  [ Cédric Boutillier ]
+  * New upstream version 3.21.0
+  * Refresh packaging
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 22 Jul 2020 12:17:01 +0200
+
+ruby-rouge (3.19.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 3.19.0
+  * Refresh patches
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 23 May 2020 14:55:29 +0530
+
+ruby-rouge (3.18.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 3.18.0
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 22 Apr 2020 18:41:50 +0530
+
+ruby-rouge (3.17.0-2) unstable; urgency=medium
+
+  * d/control (Build-Depends): Add ruby-bundler to make autopkgtest pass on
+    testing.
+
+ -- Daniel Leidert <dleidert@debian.org>  Tue, 07 Apr 2020 01:19:57 +0200
+
+ruby-rouge (3.17.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control: Add Rules-Requires-Root field.
+    (Uploaders): Add myself.
+    (Build-Depends): Add ruby-minitest-power-assert, ruby-sinatra for tests.
+    (Depends): Remove ruby-interpreter and add ${ruby:Depends}.
+  * d/ruby-tests.rake: Add to run tests.
+  * d/watch: Update to use GitHub releases.
+  * d/patches/0002_Fix_location_of_demo.path: Adjust patch.
+    - To run the tests we need to look in the source path too. Adjust the
+      patch to look for the source path and fall back to /usr/share/rouge.
+  * d/patches/0004-Disable-all-non-essential-gems.patch: Add patch.
+    - Patch out all non-essential gems to run tests.
+  * d/patches/0005-Fix-gemspec-requiring-lib.patch: Add patch.
+    - Fix for gemspec file to not rely on lib/ (not available in autopkgtest).
+  * d/patches/series: Enable new patch.
+
+ -- Daniel Leidert <dleidert@debian.org>  Fri, 03 Apr 2020 02:20:57 +0200
+
+ruby-rouge (3.15.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+  [ Debian Janitor ]
+  * Set debhelper-compat version in Build-Depends.
+  * Set field Upstream-Contact in debian/copyright.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+
+ -- Daniel Leidert <dleidert@debian.org>  Fri, 17 Jan 2020 23:16:09 +0100
+
+ruby-rouge (3.14.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release.
+
+ -- Daniel Leidert <dleidert@debian.org>  Thu, 12 Dec 2019 22:08:38 +0100
+
+ruby-rouge (3.13.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release.
+
+ -- Daniel Leidert <dleidert@debian.org>  Tue, 19 Nov 2019 22:54:30 +0100
+
+ruby-rouge (3.12.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release.
+  * d/control (Standards-Version): Bump to 4.4.1.
+
+ -- Daniel Leidert <dleidert@debian.org>  Sun, 10 Nov 2019 20:58:56 +0100
+
+ruby-rouge (3.8.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release.
+  * debian/upstream/metadata: Add meta data.
+
+ -- Daniel Leidert <dleidert@debian.org>  Thu, 15 Aug 2019 23:45:53 +0200
+
+ruby-rouge (3.7.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release.
+
+ -- Daniel Leidert <dleidert@debian.org>  Mon, 05 Aug 2019 23:43:32 +0200
+
+ruby-rouge (3.6.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Team upload
+
+  [ Daniel Leidert ]
+  * debian/compat: Raised to level 12.
+  * debian/control (Build-Depends): Raised debhelper version accordingly.
+    (Standards-Version): Bumped to 4.4.0.
+  * debian/copyright: Updated.
+  * debian/rougify.1: Updated via help2man.
+  * debian/ruby-rouge.lintian-overrides: Add application-in-library-section
+    and library-package-name-for-application tags.
+  * debian/patches/*.patch: Refreshed.
+
+ -- Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>  Thu, 18 Jul 2019 17:09:42 +0200
+
+ruby-rouge (3.3.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 3.3.0
+  * Declare compliance with Debian Policy 4.3.0
+  * debian/changelog: use secure url in Format field
+  * Refresh patches
+  * Remove debian/docs, the file listed does not exist
+  * Create patch to fix perl demo shebang
+  * Update debian/lintian-overrrides
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Fri, 04 Jan 2019 09:42:17 -0200
+
+ruby-rouge (3.2.1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 3.2.1
+  * Bump Standards-Version to 4.2.0 (no changes needed)
+
+ -- Pirate Praveen <praveen@debian.org>  Thu, 23 Aug 2018 16:19:37 +0530
+
+ruby-rouge (3.1.1-1) experimental; urgency=medium
+
+  * Team upload
+  * New upstream version 3.1.1
+  * Bump Standards-Version to 4.1.4 (no changes needed)
+  * Bump debhelper compatibility level to 11
+  * Fix gemwatch url
+  * Use salsa.debian.org in Vcs-* fields
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 27 Jun 2018 16:49:08 +0530
+
+ruby-rouge (2.2.1-1) unstable; urgency=medium
+
+  * New upstream version 2.2.1
+  * Refresh patches
+  * Bump Standard Version: 4.0.0
+  * Bump debhelper >= 10
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Mon, 28 Aug 2017 13:18:51 +0900
+
+ruby-rouge (2.0.2-1) unstable; urgency=medium
+
+  * Imported Upstream version 2.0.2
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Sun, 03 Jul 2016 19:12:46 +0900
+
+ruby-rouge (2.0.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 2.0.1
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Tue, 21 Jun 2016 21:45:08 +0900
+
+ruby-rouge (1.11.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Imported Upstream version 1.11.0
+  * Bump debhelper compatibility level to 9
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.8 (no changes needed)
+  * Run wrap-and-sort on packaging files
+  * Fix typo in rougify.1 manpage
+  * Fix path for script-not-executable lintian override command
+
+ -- Cédric Boutillier <boutil@moszumanska.debian.org>  Sat, 11 Jun 2016 22:11:03 +0200
+
+ruby-rouge (1.10.1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Check gemspec dependencies during build
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 23 Dec 2015 16:47:00 +0530
+
+ruby-rouge (1.9.1-1) unstable; urgency=medium
+
+  * Team upload
+  * Imported Upstream version 1.9.1
+  * Add a debian/TODO file with the following items:
+    - running the test suite
+    - automation of the manpage creation
+  * Add a patch to fix path for the rouge library in the rougify tool.
+  * Add README.md as documentation
+  * Move demos file to /usr/share/ruby-rouge
+    - install the files at the proper location before dh_auto_install
+    - add demos_in_usr_share.patch to fix the path in rouge/lexer.rb
+  * Update packaging with dh-make-ruby -w
+    - bump standards-version to 3.9.6 (no changes needed)
+
+ -- Cédric Boutillier <boutil@debian.org>  Mon, 20 Jul 2015 07:20:53 +0200
+
+ruby-rouge (1.6.2-1) unstable; urgency=medium
+
+  * Imported Upstream version 1.6.2
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Sun, 17 Aug 2014 20:44:24 +0900
+
+ruby-rouge (1.5.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #755879)
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Thu, 17 Jul 2014 11:06:28 +0900

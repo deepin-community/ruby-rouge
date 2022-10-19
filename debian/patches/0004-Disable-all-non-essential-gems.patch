@@ -1,0 +1,53 @@
+From: Daniel Leidert <daniel.leidert@wgdd.de>
+Date: Fri, 3 Apr 2020 02:46:16 +0200
+Subject: Disable all non essential gems
+
+The tests are set up via bundler. So patch out all non-essential gems.
+---
+ Gemfile | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/Gemfile b/Gemfile
+index 0669849..3e6bedb 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -11,25 +11,25 @@ gem 'minitest-power_assert'
+ gem 'power_assert', '~> 1.2'
+ 
+ gem 'parallel', '~> 1.13.0' if RUBY_VERSION < '2.2.0'
+-gem 'rubocop', '~> 0.49.1'
++#gem 'rubocop', '~> 0.49.1'
+ 
+ # don't try to install redcarpet under jruby
+-gem 'redcarpet', :platforms => :ruby
++#gem 'redcarpet', :platforms => :ruby
+ 
+ # Profiling
+ if RUBY_VERSION >= '2.3.0'
+-  gem 'memory_profiler', :require => false
++#  gem 'memory_profiler', :require => false
+ end
+ 
+ # Needed for a Rake task
+-gem 'git'
+-gem 'yard'
++#gem 'git'
++#gem 'yard'
+ 
+ group :development do
+-  gem 'pry'
++  #gem 'pry'
+ 
+   # docs
+-  gem 'github-markup'
++  #gem 'github-markup'
+ 
+   # for visual tests
+   if RUBY_VERSION < '2.2.0'
+@@ -37,5 +37,5 @@ group :development do
+   else
+     gem 'sinatra'
+   end
+-  gem 'shotgun'
++  #gem 'shotgun'
+ end

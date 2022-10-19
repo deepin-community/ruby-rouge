@@ -1,0 +1,43 @@
+.TH ROUGIFY "1" "July 2019" "rougify 3.6.0" "User Commands"
+.SH NAME
+rougify \- rouge is a pure-ruby syntax highlighter
+.SH DESCRIPTION
+usage: rougify {global options} [command] [args...]
+.PP
+where \fB<command>\fR is one of:
+.TP
+.B highlight
+highlight code
+.TP
+.B help
+print help info
+.TP
+.B style
+print CSS styles
+.TP
+.B list
+list available lexers
+.TP
+.B guess
+guess the languages of file
+.TP
+.B version
+print the rouge version number
+.SS "global options:"
+.TP
+\fB\-\-require\fR|\-r <fname>
+require <fname> after loading rouge
+.PP
+See \fBrougify help <command>\fR for more info.
+.SH "SEE ALSO"
+The full documentation for
+.B rougify
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B rougify
+programs are properly installed at your site, the command
+.IP
+.B info rougify
+.PP
+should give you access to the complete manual.

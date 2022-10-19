@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export GEM2DEB_TEST_RUNNER = --check-dependencies
+export DH_RUBY = --gem-install
+
+%:
+	dh $@ --buildsystem=ruby --with ruby
+
+override_dh_auto_install:
+	dh_install lib/rouge/demos /usr/share/ruby-rouge
+	dh_auto_install
+	rm -rf debian/ruby-rouge/usr/share/rubygems-integration/all/gems/rouge-*/lib/rouge/demos/

@@ -1,0 +1,3 @@
+ruby-rouge: script-not-executable usr/share/ruby-rouge/demos/perl
+ruby-rouge: application-in-library-section ruby usr/bin/rougify
+ruby-rouge: library-package-name-for-application usr/bin/rougify

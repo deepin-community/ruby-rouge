@@ -1,0 +1,27 @@
+From: Daniel Leidert <dleidert@debian.org>
+Date: Fri, 10 Sep 2021 00:26:04 +0200
+Subject: Fix tests and disable bundler
+
+Forwarded: not-needed
+---
+ spec/spec_helper.rb | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/spec/spec_helper.rb b/spec/spec_helper.rb
+index f0d65c7..ecbfec5 100644
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -1,12 +1,10 @@
+ # -*- coding: utf-8 -*- #
+ # frozen_string_literal: true
+ 
+-require 'rubygems'
+-require 'bundler'
+-Bundler.require
+ require 'rouge'
+ require 'minitest/spec'
+ require 'minitest/autorun'
++require 'minitest/power_assert'
+ 
+ Token = Rouge::Token
+ 
